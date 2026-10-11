@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Policy Centre — ADC Zamfara Governorship Information Platform (Prototype)</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="proto-banner" role="note">Prototype &middot; provisional branding &middot; all content on this page is illustrative</div>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html">
+      <span class="brand-badge">ADC Zamfara</span>
+      <span>Governorship Information Platform
+        <span class="brand-sub">Provisional identity — pending brand approval</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="policy-centre.html" aria-current="page">Policy Centre</a></li>
+      <li><a href="index.html#updates">Updates</a></li>
+      <li><a href="index.html#sources">Sources</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-admin" href="admin.html">Admin (demo)</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="section" aria-labelledby="pc-heading">
+    <div class="container">
+      <div class="section-head">
+        <h1 id="pc-heading" style="margin:0;">Policy Centre</h1>
+        <span class="badge badge--demo">&#9888; Illustrative prototype data</span>
+      </div>
+      <p class="muted">Search and filter policy proposals, open a proposal, review the problem statement, read the proposed actions, and inspect supporting references.</p>
+
+      <div class="field" style="max-width:480px;">
+        <label for="policy-search">Search sample policy records</label>
+        <input class="input" type="search" id="policy-search" placeholder="e.g. education, healthcare&hellip;" autocomplete="off">
+      </div>
+
+      <div class="chips" id="category-chips" role="group" aria-label="Filter by category"></div>
+
+      <p class="small muted" id="result-count" aria-live="polite"></p>
+
+      <div class="grid grid-2" id="policy-list" aria-live="polite"></div>
+
+      <p class="alert" role="note" style="margin-top:24px;">
+        <strong>Interactive demonstration:</strong> search and category filters work on the sample records above.
+        The production system will load approved records from the database.
+        The prototype does not invent candidate promises, costs, endorsements, or official policy positions —
+        the records shown are structural placeholders only.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>About this platform</h3>
+        <p class="small">Prototype with provisional branding and illustrative content only. No material here is an official statement, commitment, or endorsement.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="small">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#sources">Sources</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Website information</h3>
+        <ul class="small">
+          <li><a href="index.html#about">Privacy (placeholder)</a></li>
+          <li><a href="index.html#about">Accessibility (placeholder)</a></li>
+          <li><a href="admin.html">Admin dashboard (demo)</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-legal">Prototype build &middot; provisional branding &middot; domain to be decided after approval.</p>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/public.js"></script>
+</body>
+</html>
