@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin Dashboard (Demo) — Campaign CMS Prototype</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="proto-banner" role="note">Demonstration dashboard &middot; Not connected to production data &middot; Restricted access will be enforced in the development phase</div>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Admin navigation bar">
+    <a class="brand" href="admin.html">
+      <span class="brand-badge">Campaign CMS</span>
+      <span>Administration
+        <span class="brand-sub">Restricted to authorised personnel (demo — no login in prototype)</span>
+      </span>
+    </a>
+    <ul class="nav-links" id="nav-links" style="display:flex;">
+      <li><a href="index.html">View public site &rarr;</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <nav aria-label="Dashboard navigation">
+      <ul>
+        <li><a href="admin.html" aria-current="page">Overview</a></li>
+        <li><a href="admin.html#review" >Pages and announcements <span class="demo-flag">demo</span></a></li>
+        <li><a href="admin.html#review">Policy proposals <span class="demo-flag">demo</span></a></li>
+        <li><a href="admin.html#review">Source documents <span class="demo-flag">demo</span></a></li>
+        <li><a href="admin.html#review">Events <span class="demo-flag">demo</span></a></li>
+        <li><a href="admin.html#review">Public enquiries <span class="demo-flag">demo</span></a></li>
+        <li><a href="admin.html#review">Users and roles <span class="demo-flag">demo</span></a></li>
+        <li><a href="admin.html#activity">Audit logs <span class="demo-flag">demo</span></a></li>
+        <li><a href="admin.html#review">Settings <span class="demo-flag">demo</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="admin-main" id="main">
+    <button class="btn btn-secondary btn-small admin-sidebar-toggle" aria-expanded="false" aria-controls="admin-sidebar">Dashboard menu</button>
+
+    <div class="admin-topbar">
+      <h1>Overview</h1>
+      <span class="badge badge--demo">&#9888; Demonstration &middot; mock data for design review, not live records</span>
+      <span class="user-chip" aria-label="Signed-in user (simulated)">&#128100; Demo reviewer</span>
+    </div>
+
+    <!-- Summary cards -->
+    <section aria-label="Summary">
+      <div class="stat-grid">
+        <div class="stat-card"><div class="num">12</div><div class="label">Sample content records</div></div>
+        <div class="stat-card"><div class="num" id="stat-review">3</div><div class="label">Sample items for review</div></div>
+        <div class="stat-card"><div class="num">4</div><div class="label">Sample policy records</div></div>
+        <div class="stat-card"><div class="num">2</div><div class="label">Sample event records</div></div>
+      </div>
+    </section>
+
+    <!-- Content review queue -->
+    <section class="panel" id="review" aria-labelledby="queue-heading">
+      <div class="section-head" style="margin-bottom:12px;">
+        <h2 id="queue-heading" style="margin:0;">Content review queue</h2>
+        <a class="more small" href="admin.html" id="reset-demo">Reset demonstration</a>
+      </div>
+      <table class="datatable" id="review-queue">
+        <thead>
+          <tr><th scope="col">Item</th><th scope="col">Status</th><th scope="col">Action</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sample education policy</td>
+            <td><span class="badge badge--review">&#9203; Awaiting review</span></td>
+            <td><button type="button" class="btn btn-primary btn-small" data-item="Sample education policy">Simulate publish</button></td>
+          </tr>
+          <tr>
+            <td>Sample public announcement</td>
+            <td><span class="badge badge--draft">&#9998; Draft</span></td>
+            <td><button type="button" class="btn btn-primary btn-small" data-item="Sample public announcement">Simulate publish</button></td>
+          </tr>
+          <tr>
+            <td>Sample source document</td>
+            <td><span class="badge badge--review">&#9203; Awaiting review</span></td>
+            <td><button type="button" class="btn btn-primary btn-small" data-item="Sample source document">Simulate publish</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small muted" style="margin:12px 0 0;">The controls above simulate a user interface state only. They do not publish website content or save anything to a database. Refreshing the page resets the demonstration.</p>
+      <p class="alert" id="sim-note" hidden style="margin-top:12px;">Simulation only — nothing was published or saved. In production, publishing requires the relevant permission, a second-person review, and writes an audit event.</p>
+    </section>
+
+    <!-- Shortcuts -->
+    <section class="panel" aria-labelledby="shortcuts-heading">
+      <h2 id="shortcuts-heading">Shortcuts to permitted actions</h2>
+      <div class="shortcut-row">
+        <a class="btn btn-secondary btn-small" href="admin.html#review">+ New draft (demo)</a>
+        <a class="btn btn-secondary btn-small" href="admin.html#review">&#8613; Upload source (demo)</a>
+        <a class="btn btn-secondary btn-small" href="admin.html#activity">&#128203; View audit log (demo)</a>
+      </div>
+      <p class="small muted" style="margin:12px 0 0;">In production, shortcuts are shown only for actions the signed-in user is authorised to perform — and every action is re-checked on the server. Hiding a menu item is not a security control.</p>
+    </section>
+
+    <!-- Recent administrative activity -->
+    <section class="panel" id="activity" aria-labelledby="activity-heading">
+      <h2 id="activity-heading">Recent administrative activity</h2>
+      <ul class="activity-feed" id="activity-feed" aria-live="polite">
+        <li><time>Sample time</time><span>Demo reviewer submitted &ldquo;Sample education policy&rdquo; for review (mock entry)</span></li>
+        <li><time>Sample time</time><span>Demo editor saved a draft of &ldquo;Sample public announcement&rdquo; (mock entry)</span></li>
+        <li><time>Sample time</time><span>Demo admin updated a user role (mock entry)</span></li>
+      </ul>
+      <p class="small muted" style="margin:12px 0 0;">Numbers and entries are mock data for design review, not live records. For the first prototype, only the visible interface and demonstration interactions are required — actual login, database persistence, permission enforcement, and publishing workflows belong to the development phase.</p>
+    </section>
+  </main>
+</div>
+
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
